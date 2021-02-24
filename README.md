@@ -1,24 +1,36 @@
-# README
+# Проект для Профкома МГТУ им. Н.Э. Баумана
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Данный README помогает раскрыть весь стек технологий, который был реализован при выполнении данной работы с целью продемонстрировать мои способности к разработке web - сервисов, используя Ruby и Ruby on Rails.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+* Ruby version 2.7.2
+* Rails version 6.1.2.1
 
-* Configuration
+Сервис был разработан для Профсоюза студентов МГТУ им. Н.Э. Баумана с целью проведения электронной регистрации посетителей мероприятий, проводимых в Университете. Пользователь имеет возможность регистрироваться на мероприятие, после чего получает сгенерированный QR-code. На входе будет установлен терминал, сканирующий этот QR-code и отмечающий человека в электронной базе. Администратор сайта сможет посмотреть, сколько человек посетило мероприятие, получить список как зарегистрированных студентов, так и посетивших мероприятие. Релизована сортировка заявок по мероприятиям, а списки можно скачивать в формате csv и xls. Администратор так же имеет возможность создавать и удалять мероприятия, вносить изменение в описание, открывать и закрывать регистрацию на них.
 
-* Database creation
+Используемые технологии и сервисы:
+* PostgreSQL
+* TablePlus
+* Nginx
+* reg.ru
+* Ajax
 
-* Database initialization
+GEM'ы:
+* gem 'devise'
+* gem 'rqrcode'
+* gem 'prawn'
+* gem 'simple_form'
+* gem 'jquery-rails'
+* gem 'carrierwave'
+* gem 'mini_magick'
+* gem 'pg'
+* gem 'byebug'
 
-* How to run the test suite
+Сервис доступен в тестовом режиме на сервере. Проверить роботоспособность можно по ссылке http://89.108.88.5
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Для тестирования личного кабинета администратора:
+  http://89.108.88.5/accounts/sign_in
+  
+  * Логин:  profkom@mail.ru
+  * Пароль: adminadmin
