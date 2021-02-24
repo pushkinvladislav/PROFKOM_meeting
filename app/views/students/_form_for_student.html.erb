@@ -1,0 +1,45 @@
+
+
+    <div class="modal-content">
+    <div id="require">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Регистрация на '<%=@event.name%>'</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+ <%= simple_form_for @student, remote: true do |f| %>
+      <div class="modal-body">
+     <%= f.input :second_name, label: 'Фамилия', error: 'Username is mandatory, please specify one' %>
+  <%= f.hidden_field :event_id, :value => @event.id %>
+  <%= f.input :first_name, label: 'Имя' %>
+  <%= f.input :email, placeholder: 'user@domain.com' %>
+  <%= f.input :group, inline_label: 'Yes, remember me' %>
+  <%= f.input :faculty, label: 'Факультет' %>
+  <%= f.input :bilet, inline_label: 'Yes, remember me' %>
+  <%= f.input :phone, label: 'Номер телефона' %>
+  <%= f.input :vk_id, label: 'vk_id' %>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         <%= f.button :submit, 'Зарегистрироваться', class:"btn btn-primary"%>
+        <% end %>
+      </div>
+      
+    </div>
+
+<div style="display:none" id="response">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ваш билет на '<%=@event.name%>'</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body" id="show_bilet">
+      
+     </div>
+
+      <div class="modal-footer">
+       
+      </div>
+    </div>
+</div>

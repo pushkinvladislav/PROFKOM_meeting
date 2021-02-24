@@ -1,0 +1,77 @@
+<div id="student_<%= student.id %>">
+<p>
+  <strong>Second name:</strong>
+  <%= student.second_name %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= student.first_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= student.email %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= student.group %>
+</p>
+
+<p>
+  <strong>Faculty:</strong>
+  <%= student.faculty %>
+</p>
+
+<p>
+  <strong>Bilet:</strong>
+  <%= student.bilet %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= student.phone %>
+</p>
+
+<p>
+  <strong>Vk:</strong>
+  <%= student.vk_id %>
+</p>
+
+<p>
+  <strong>Visit:</strong>
+  <%= student.visit %>
+</p>
+
+<p>
+  <strong>qrcode:</strong>
+  <%= get_qrcode(student.qrcode).html_safe %>
+</p>
+
+</div>
+
+<div class="container">
+  <div class="card">
+    <div class="imgBx">
+      <img src="img/nike.png" alt="shoes">
+    </div>
+    <div class="contentBx">
+      <h2>Nike Shoes</h2>
+      <div class="size">
+        <h3>Size:</h3>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+        <span>10</span>
+      </div>
+      <div class="color">
+        <h3>Color:</h3>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <a href="#">Buy Now</a>
+    </div>
+  </div>
+</div>

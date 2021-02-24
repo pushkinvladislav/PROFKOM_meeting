@@ -1,0 +1,52 @@
+ <%=link_to 'Download Report', student_path(format: 'pdf')%>
+<p>
+  <strong>Second name:</strong>
+  <%= @student.second_name %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @student.first_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @student.email %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @student.group %>
+</p>
+
+<p>
+  <strong>Faculty:</strong>
+  <%= @student.faculty %>
+</p>
+
+<p>
+  <strong>Bilet:</strong>
+  <%= @student.bilet %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @student.phone %>
+</p>
+
+<p>
+  <strong>Vk:</strong>
+  <%= @student.vk_id %>
+</p>
+
+<p>
+  <strong>Visit:</strong>
+  <%= @student.visit %>
+</p>
+
+<p>
+  <strong>qrcode:</strong>
+  <%= get_qrcode(@student.qrcode).html_safe %>
+</p>
+
+

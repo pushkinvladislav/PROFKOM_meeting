@@ -1,0 +1,28 @@
+// Place all the styles related to the public controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+body {
+    padding-top: 0px;
+
+}
+
+#myCarousel .carousel-item{
+    background-size: cover!important;
+}
+
+.card{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    transition-duration: 0.5s;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.06), 0px 0px 0px rgba(0, 0, 0, 0.07);
+
+}
+
+.card:hover{
+    margin-top: 0px;
+    margin-bottom: 5px;
+    box-shadow: 0px 16px 28px rgba(0, 0, 0, 0.06), 0px 16px 28px rgba(0, 0, 0, 0.07);
+
+}

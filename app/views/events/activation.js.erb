@@ -1,0 +1,12 @@
+$('#active').bind('ajax:success', function() {
+$("#active").html('Закрыть регистрацию');
+ $('#active').removeClass('btn btn-sm btn-inline-secondary').addClass('btn btn-sm btn-inline-secondary');
+ console.log("good");
+});
+
+
+$('#unactive').bind('ajax:success', function() {
+$("#unactive").html('Открыть регистрацию');
+ $('#unactive').removeClass('btn btn-sm btn-inline-secondary').addClass('btn btn-sm btn-inline-secondary');
+console.log("good");
+});

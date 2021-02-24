@@ -1,0 +1,11 @@
+$('#reg_butt').bind('ajax:success', function() {
+$("#reg_butt").html('Зарегистрирован');
+ $('#reg_butt').removeClass('btn btn-sm btn-outline-secondary').addClass('btn btn-sm btn-inline-secondary');
+});
+console.log("good");
+
+$('#unreg_butt').bind('ajax:success', function() {
+$("#unreg_butt").html('Зарегистрировать');
+ $('#unreg_butt').removeClass('btn btn-sm btn-inline-secondary').addClass('btn btn-sm btn-outline-secondary');
+});
+console.log("good");

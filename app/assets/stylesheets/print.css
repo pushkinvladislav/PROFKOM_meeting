@@ -1,0 +1,8 @@
+/*
+ *= require print
+ */
+@media print {
+    .pdf_exclude {
+       display: none;
+     }
+  }

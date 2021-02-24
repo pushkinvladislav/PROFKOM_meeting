@@ -1,0 +1,10 @@
+<% if account_signed_in? %>
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="<%=events_path%>">Профком МГТУ</a>
+    <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <%=link_to 'Выйти', destroy_account_session_path,class:"btn btn-outline-success", method: :delete%>
+    </li>
+  </ul>
+</nav>
+<% end %>
