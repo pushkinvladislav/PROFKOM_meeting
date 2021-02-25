@@ -25,17 +25,17 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'carrierwave', '0.10.0'
 gem 'devise'
+gem 'jquery-rails'
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'
+gem 'pdfkit'
 gem 'prawn'
 gem 'rqrcode'
-gem 'wicked_pdf'
-gem 'pdfkit'
-gem 'wkhtmltopdf-binary', '~> 0.12.3'
 gem 'simple_form'
-gem 'jquery-rails'
-gem 'carrierwave', '0.10.0'
 gem 'telegram-bot-ruby'
-gem 'mini_magick', '~> 4.5', '>= 4.5.1'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary', '~> 0.12.3'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
@@ -58,6 +58,11 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
+  gem 'debase', '~> 0.2.1'
+  gem 'rspec-rails'
+  gem "ruby-debug-ide"
+  gem 'minitest'
+  gem 'minitest-reporters'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'

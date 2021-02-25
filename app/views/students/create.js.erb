@@ -1,11 +1,11 @@
-$("#new_student").bind('ajax:success', function(){
-  $("#require").hide(500); // скрывает форму
-  console.log("good1");
-  $('#show_bilet').html("<%= j render(@student) %>");
-  $("#response").show(500); // выводит скрытое сообщение
-  console.log("good2");
+$("#new_student").bind('ajax:success', function () {
+    $("#require").hide(500); // скрывает форму
+    console.log("good1");
+    $('#show_bilet').html("<%= j render(@student) %>");
+    $("#response").show(500); // выводит скрытое сообщение
+    console.log("good2");
 });
 console.log("good");
-$(document).ready(function() {
-  console.log($('#').attr('id'));
+$(document).ready(function () {
+    console.log($('#').attr('id'));
 });

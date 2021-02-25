@@ -6,7 +6,6 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-
 module ProfkomMeeting
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -20,6 +19,6 @@ module ProfkomMeeting
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.middleware.use PDFKit::Middleware, :print_media_type => true
+    config.middleware.use PDFKit::Middleware, print_media_type: true
   end
 end
