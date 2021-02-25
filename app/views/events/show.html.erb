@@ -1,31 +1,31 @@
-
 <%# style="background-image:url('<%=@event.photo.url%>
 
-<body class="h-100  bg-dark" >
+<body class="h-100  bg-dark">
 
- 
+
 <div class="alert alert-success" style="display: none">
-   Спасибо за регистрацию! Ждем вас на мероприятии!
+  Спасибо за регистрацию! Ждем вас на мероприятии!
 </div>
- 
+
 <a href="" class="btn btn-default">Отправить</a>
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
   <main class="px-3 text-center text-white">
-    <h1><%=@event.name%></h1>
-    <p class="lead"><%=@event.information%></p>
+    <h1><%= @event.name %></h1>
+    <p class="lead"><%= @event.information %></p>
     <p class="lead">
-          <%= link_to "Зарегистрироваться", new_student_path(:event_id => @event.id), remote: true, class: "btn btn-primary" %>
+      <%= link_to "Зарегистрироваться", new_student_path(:event_id => @event.id), remote: true, class: "btn btn-primary" %>
 
 
     </p>
   </main>
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-      
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+
+    </div>
   </div>
 </div>
- <%= render "layouts/footer"%>
+<%= render "layouts/footer" %>
 </body>

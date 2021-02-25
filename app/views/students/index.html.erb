@@ -44,7 +44,7 @@
          <% end %>
         </td>
         <td><%= link_to 'Показать', student, class:"btn btn-sm btn-outline-secondary" %></td>
-        <td><%= link_to 'Удалить', student, class:"delete_student", remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Удалить', student, class:"btn btn-sm btn-outline-secondary delete_student", remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

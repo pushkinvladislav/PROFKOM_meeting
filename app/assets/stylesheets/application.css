@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
- @media print {
+@media print {
     .pdf_exclude {
-          display: none;
+        display: none;
     }
-  }
+}

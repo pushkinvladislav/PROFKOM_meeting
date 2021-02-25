@@ -1,28 +1,28 @@
-<h1>Список участников "<%=@event.name%>"</h1>
+<h1>Список участников "<%= @event.name %>"</h1>
 <table class='table table-striped text-center'>
+  <tr>
+    <th>Фамилия</th>
+    <th>Имя</th>
+    <th>Email</th>
+    <th>Группа</th>
+    <th>Факультет</th>
+    <th>№ студ. билета</th>
+    <th>Телефон</th>
+    <th>Vk</th>
+    <th>Посещение</th>
+    <th colspan="3"></th>
+  </tr>
+  <% @students.each do |student| %>
     <tr>
-      <th>Фамилия</th>
-      <th>Имя</th>
-      <th>Email</th>
-      <th>Группа</th>
-      <th>Факультет</th>
-      <th>№ студ. билета</th>
-      <th>Телефон</th>
-      <th>Vk</th>
-      <th>Посещение</th>
-      <th colspan="3"></th>
+      <td><%= student.second_name %></td>
+      <td><%= student.first_name %></td>
+      <td><%= student.email %></td>
+      <td><%= student.group %></td>
+      <td><%= student.faculty %></td>
+      <td><%= student.bilet %></td>
+      <td><%= student.phone %></td>
+      <td><%= student.vk_id %></td>
+      <td><%= student.visit %></td>
     </tr>
-    <% @students.each do |student| %>
-      <tr>
-        <td><%= student.second_name %></td>
-        <td><%= student.first_name %></td>
-        <td><%= student.email %></td>
-        <td><%= student.group %></td>
-        <td><%= student.faculty %></td>
-        <td><%= student.bilet %></td>
-        <td><%= student.phone %></td>
-        <td><%= student.vk_id %></td>
-        <td><%= student.visit %></td>
-      </tr>
-    <% end %>
+  <% end %>
 </table>

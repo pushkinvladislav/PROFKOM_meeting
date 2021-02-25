@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
   before_action :set_sidebar
-  
+
   def index
   end
 
