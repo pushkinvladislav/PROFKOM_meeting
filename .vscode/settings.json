@@ -1,3 +1,6 @@
 {
+    "files.associations": {
+        "*.erb": "erb"
+    },
     "git.ignoreLimitWarning": true
 }
