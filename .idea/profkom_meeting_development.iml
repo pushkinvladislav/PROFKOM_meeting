@@ -64,10 +64,6 @@
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/actionmailbox-6.1.2.1/lib" />
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/actionmailbox-6.1.2.1/config" />
         </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/actionmailbox-6.1.2.1/db" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/actionmailbox-6.1.2.1/config" />
-        </excluded>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
@@ -114,9 +110,6 @@
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/actiontext-6.1.2.1/app" />
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/actiontext-6.1.2.1/lib" />
         </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/actiontext-6.1.2.1/db" />
-        </excluded>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
@@ -198,10 +191,6 @@
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/activestorage-6.1.2.1/lib" />
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/activestorage-6.1.2.1/config" />
         </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/activestorage-6.1.2.1/db" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/activestorage-6.1.2.1/config" />
-        </excluded>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
@@ -283,7 +272,6 @@
         </SOURCES>
         <excluded>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/axiom-types-0.1.1/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/axiom-types-0.1.1/config" />
         </excluded>
       </library>
     </orderEntry>
@@ -504,7 +492,6 @@
         </SOURCES>
         <excluded>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/coercible-1.0.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/coercible-1.0.0/config" />
         </excluded>
       </library>
     </orderEntry>
@@ -595,7 +582,6 @@
         </SOURCES>
         <excluded>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/descendants_tracker-0.0.4/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/descendants_tracker-0.0.4/config" />
         </excluded>
       </library>
     </orderEntry>
@@ -615,9 +601,6 @@
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/devise-4.7.3/lib" />
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/devise-4.7.3/config" />
         </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/devise-4.7.3/config" />
-        </excluded>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
@@ -666,7 +649,6 @@
         </SOURCES>
         <excluded>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/equalizer-0.0.11/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/equalizer-0.0.11/config" />
         </excluded>
       </library>
     </orderEntry>
@@ -790,7 +772,6 @@
         </SOURCES>
         <excluded>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/ice_nine-0.11.2/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/ice_nine-0.11.2/config" />
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/ice_nine-0.11.2/benchmarks" />
         </excluded>
       </library>
@@ -813,7 +794,6 @@
         </SOURCES>
         <excluded>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/inflecto-0.0.2/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/inflecto-0.0.2/config" />
         </excluded>
       </library>
     </orderEntry>

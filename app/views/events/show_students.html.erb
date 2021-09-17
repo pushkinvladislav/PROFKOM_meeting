@@ -51,8 +51,8 @@
           <%= link_to 'Зарегистрировать', visit_update_student_path(student), class: "btn btn-sm btn-outline-secondary reg_butt", id: "reg_butt", method: :patch, remote: true %>
         <% end %>
       </td>
-      <td><%= link_to 'Show', student, class: "btn btn-sm btn-outline-secondary" %></td>
-      <td><%= link_to 'Destroy', student, remote: true, method: :delete, class: "btn btn-sm btn-outline-secondary delete_student", data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Показать', student, class: "btn btn-sm btn-outline-secondary" %></td>
+      <td><%= link_to 'Удалить', student, remote: true, method: :delete, class: "btn btn-sm btn-outline-secondary delete_student", data: { confirm: 'Вы уверены?' } %></td>
     </tr>
   <% end %>
   </tbody>
