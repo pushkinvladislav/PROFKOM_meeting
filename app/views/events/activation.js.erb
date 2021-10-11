@@ -1,12 +1,12 @@
 $('#active').bind('ajax:success', function () {
     $("#active").html('Закрыть регистрацию');
-    $('#active').removeClass('btn btn-sm btn-inline-secondary').addClass('btn btn-sm btn-inline-secondary');
+    $('#active').removeClass('inactive btn btn-sm btn-outline-secondary').addClass('active btn btn-sm btn-outline-secondary');
     console.log("good");
 });
 
 
 $('#inactive').bind('ajax:success', function () {
     $("#inactive").html('Открыть регистрацию');
-    $('#inactive').removeClass('btn btn-sm btn-inline-secondary').addClass('btn btn-sm btn-inline-secondary');
+    $('#inactive').removeClass('inactive btn btn-sm btn-inline-secondary').addClass('active btn btn-sm btn-inline-secondary');
     console.log("good");
 });

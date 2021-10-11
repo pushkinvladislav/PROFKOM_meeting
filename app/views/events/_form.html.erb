@@ -12,32 +12,75 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.label :Название_мероприятия %>
-    <%= form.text_field :name, class: "form-control" %>
+    <%= form.submit "Сохранить", class: "btn btn-primary" %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :Информация_о_мероприятии %>
-    <%= form.text_area :information, class: "form-control" %>
+  <div class="row padding-none">
+
+    <div class="col-lg-9 padding-R-1rem">
+      <div class="form-group">
+        <%= form.label :Название_мероприятия %>
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :Информация_о_мероприятии %>
+        <%= form.text_area :information, class: "form-control big-text-area" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :Место_проведения %>
+        <%= form.text_area :place, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :Важная_информация_для_конкретного_мероприятия %>
+        <%= form.text_area :advice, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :Мероприятие_не_командное %>
+        <%= form.check_box :solo%>
+      </div>
+
+          <div class="form-group form-date">
+            <%= form.label :Начало_мероприятия%>
+            <%= form.datetime_field :begin_date, class: "form-control" %>
+          </div>
+          <div class="form-group form-date">
+            <%= form.label :Конец_мероприятия%>
+            <%= form.datetime_field :end_date, class: "form-control" %>
+          </div>
+
+
+
+
+    </div>
+
+    <div class="col-lg-3 padding-R-1rem order-lg-first ">
+      <% if @event.photo.present? %>
+        <%= image_tag @event.photo.url, class: "event-card-img card-edit-img margin-B-1rem" %>
+      <% end %>
+
+      <div class="form-group">
+        <%= form.label :Фотография %>
+        <%= form.file_field :photo, class: "form-control" %>
+        <%= form.hidden_field :photo_cache %>
+
+      </div>
+    </div>
+
+
   </div>
 
-  <div class="form-group">
-    <%= form.date_field :begin_date %>
-  </div>
 
-  <div class="form-group">
-    <%= form.label :Фотография %>
-    <%= form.file_field :photo, class: "form-control" %>
-    <%= form.hidden_field :photo_cache %>
-    <% if @event.photo.present? %>
-      <%= image_tag @event.photo.url, class: "mt-4" %>
-    <% end %>
-  </div>
+
+
+
+
   <br>
 
 
-  <div class="form-group">
-    <%= form.submit "Сохранить", class: "btn btn-primary" %>
-  </div>
+
 
 <% end %>

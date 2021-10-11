@@ -7,4 +7,6 @@ class Event < ApplicationRecord
   validates :photo, presence: true
 
   scope :active, -> { where('activation') }
+  scope :preview, -> { where('preview') }
+  scope :archive, -> { where('(preview = false)and(activation = false) ') }
 end

@@ -6,6 +6,7 @@ class StudentsController < ApplicationController
   # GET /students or /students.json
   def index
     @students = Student.all
+    @teams = Team.all
     respond_to do |format|
       format.html
       format.csv { send_data @students.to_csv }
@@ -14,12 +15,19 @@ class StudentsController < ApplicationController
   end
 
   # GET /students/1 or /students/1.json
-  def show; end
+  def show
+    # @event = Event.find(params[:event_id])
+    respond_to do |format|
+      format.js { render nothing: true }
+      format.html
+    end
+  end
 
   # GET /students/new
   def new
     @student = Student.new
     @event = Event.find(params[:event_id])
+    @teams = Team.all
     respond_to do |format|
       format.js { render nothing: true }
     end
@@ -31,6 +39,7 @@ class StudentsController < ApplicationController
   # POST /students or /students.json
   def create
     @student = Student.new(student_params)
+    @event = Event.find(@student.event_id)
     respond_to do |format|
       if @student.save
 
@@ -99,6 +108,6 @@ class StudentsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def student_params
-    params.require(:student).permit(:event_id, :second_name, :first_name, :email, :group, :faculty, :bilet, :phone, :vk_id, :visit)
+    params.require(:student).permit(:event_id, :second_name, :first_name, :email, :group, :faculty, :bilet, :phone, :vk_id, :visit, :team_id)
   end
 end

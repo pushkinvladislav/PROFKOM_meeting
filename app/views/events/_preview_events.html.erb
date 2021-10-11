@@ -1,0 +1,28 @@
+<% @preview_events.each do |event| %>
+  <div class="event-card col-xl-6 col-lg-12 col-sm-12 row padding-none padding-B-1rem">
+    <div class="col-5 col-lg-5 col-md-5 col-sm-12 padding-none" onclick="window.location.href = 'events/<%=event.id%>'">
+      <%= image_tag event.photo.url, class: 'event-card-img card-img-top' if event.photo? %>
+    </div>
+    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 padding-LR-1rem event-card-description row margin-none padding-none">
+      <div class="row margin-none padding-none padding-R-1rem">
+        <div class="event-card-header padding-BT-1rem padding-none height-fit"><%= event.name %></div>
+        <div class="event-date-small height-fit"><%= event.begin_date.day %> <%= $monthnames[event.begin_date.month] %>
+          - <%= event.end_date.day %> <%= $monthnames[event.end_date.month] %></div>
+
+        <div class="row margin-none padding-none">
+          <div class="event-time-small padding-none"><i class="far fa-clock"></i></div>
+          <div class="event-time-small height-fit"> <%= event.begin_date.hour %>:<%= event.begin_date.min %>
+            -<%= event.end_date.hour %>:<%= event.end_date.min %></div>
+        </div>
+
+        <div class="row margin-none padding-none">
+          <div class="event-time-small padding-none"><i class="far fa-map"></i></div>
+          <div class="event-place-small height-fit"> <%= event.place %></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+<% end %>

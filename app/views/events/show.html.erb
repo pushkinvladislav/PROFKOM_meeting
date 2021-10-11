@@ -1,31 +1,84 @@
 <%# style="background-image:url('<%=@event.photo.url%>
 
-<body class="h-100  bg-dark">
+
+<div class="container padding-none margin-none">
+  <div class="row margin-none">
+
+    <div class="col-xl-5 padding-none padding-LR-1rem">
+
+      <div class="row padding-none sticky-top">
+        <a class="event-selector" href="/">Все мероприятия ›</a>
+        <div class="event-date-big">
+          <%=@event.begin_date.day%> <%= $monthnames[@event.begin_date.month] %> -  <%=@event.end_date.day%> <%= $monthnames[@event.end_date.month] %>
+        </div>
+
+        <h1 class="event-show padding-none padding-L-1rem"><%= @event.name %></h1>
+        <div class="row padding-none padding-L-1rem margin-none event-show">
+          <div class="row margin-none padding-B-1rem padding-none">
+            <div class="event-time-big padding-none"><i class="far fa-clock"></i></div>
+            <div class="event-time-big height-fit">
+              <%=@event.begin_date.hour%>:<%=@event.begin_date.min%>-<%=@event.end_date.hour%>:<%=@event.end_date.min%>
+            </div>
+          </div>
+
+          <div class="row margin-none padding-B-1rem padding-none ">
+            <div class="event-time-big padding-none"><i class="far fa-map"></i></div>
+            <div class="event-place-big height-fit margin-T-03rem">
+              <%=@event.place %>
+            </div>
+          </div>
+        </div>
+        <div class="padding-LR-1rem padding-B-1rem row margin-none event-show">
+
+          <div class="row advice align-content-center margin-none">
+
+            <div class="event-advice-big">
+              <%=@event.advice %>
+            </div>
 
 
-<div class="alert alert-success" style="display: none">
-  Спасибо за регистрацию! Ждем вас на мероприятии!
-</div>
+          </div>
 
-<a href="" class="btn btn-default">Отправить</a>
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-
-  <main class="px-3 text-center text-white">
-    <h1><%= @event.name %></h1>
-    <p class="lead"><%= @event.information %></p>
-    <p class="lead">
-      <%= link_to "Зарегистрироваться", new_student_path(:event_id => @event.id), remote: true, class: "btn btn-primary" %>
+        </div>
 
 
-    </p>
-  </main>
 
+        <p class="lead padding-LR-1rem">
+          <%if @event.activation %>
+          <%= link_to "Зарегистрироваться ›", new_student_path(:event_id => @event.id), remote: true, class: "btn btn-blue" %>
+          <%else %>
+          Регистрация еще не началась либо уже закончилась!
+            <%end %>
+        </p>
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+      </div>
 
     </div>
+
+    <div class="col-xl-7 padding-none padding-LR-1rem">
+
+      <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner carousel-events">
+          <div class="carousel-item active" style="background: url(<%= @event.photo.url if @event.photo? %>) no-repeat center center; ">
+          </div>
+          <div class="carousel-item" style="background: url('<%= asset_path('banner_1.jpg') %>') no-repeat center center; ">
+          </div>
+          <div class="carousel-item" style="background: url('<%= asset_path('banner_2.jpg') %>') no-repeat center center; ">
+          </div>
+        </div>
+        <ol class="carousel-indicators">
+          <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+          <li data-bs-target="#myCarousel" data-bs-slide-to="1" class=""></li>
+          <li data-bs-target="#myCarousel" data-bs-slide-to="2" class=""></li>
+        </ol>
+      </div>
+      <h3>
+        Описание мероприятия:
+      </h3>
+      <p class="lead"><pre><%= @event.information %></pre></p>
+    </div>
+
   </div>
+
+
 </div>
-<%= render "layouts/footer" %>
-</body>

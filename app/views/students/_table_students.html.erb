@@ -1,0 +1,59 @@
+<div class="table-responsive">
+  <table class='table text-center align-middle table-hover table-sm'>
+    <thead>
+    <tr>
+      <%if !@event.solo %>
+      <th>Команда</th>
+        <%end %>
+      <th>Фамилия</th>
+      <th>Имя </th>
+      <th>Email</th>
+      <th>Группа</th>
+      <th>Факультет</th>
+      <th>№ студ. билета</th>
+      <th>Телефон</th>
+      <th>Vk</th>
+      <th>Посещение</th>
+      <th colspan="2"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @students.sort_by { |student | student.team_id }.each do |student| %>
+      <tr>
+        <%if student.team_id %>
+          <td><%= Team.find_by(id: student.team_id).name%></td>
+          <%end%>
+        <td><%= student.second_name %></td>
+        <td><%= student.first_name %></td>
+        <td><%= student.email %></td>
+        <td><%= student.group %></td>
+        <td><%= student.faculty %></td>
+        <td><%= student.bilet %></td>
+        <td><%= student.phone %></td>
+        <td><%= student.vk_id %></td>
+        <td>
+          <% if student.visit %>
+            <%= link_to visit_update_student_path(student), class: "btn btn-round uncheсk-visit", method: :patch, remote: true do%>
+              <i class="fas fa-check-circle padding-none"></i>
+            <% end %>
+          <% else %>
+
+            <%= link_to visit_update_student_path(student), class: "btn btn-round check-visit", method: :patch, remote: true do%>
+              <i class="far fa-check-circle padding-none"></i>
+            <% end %>
+          <% end %>
+        </td>
+        <td><%= link_to student, remote: true, class: "btn btn-round" do%>
+            <i class="fas fa-qrcode padding-none"></i>
+          <% end %>
+        </td>
+        <td><%= link_to  student, class: "btn delete_student btn-round", remote: true, method: :delete, data: { confirm: 'Вы уверены?' } do%>
+            <i class="fas fa-trash-alt padding-none"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

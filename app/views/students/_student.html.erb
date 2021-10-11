@@ -1,52 +1,75 @@
 <div id="student_<%= student.id %>">
-<p>
-  <strong>Second name:</strong>
-  <%= student.second_name %>
-</p>
+  <div class="event-card-header padding-none height-fit padding-B-1rem">
+   <%=@event.name %>
+  </div>
 
-<p>
-  <strong>First name:</strong>
-  <%= student.first_name %>
-</p>
+  <div class="row padding-none margin-none event-show">
+    <div class="row margin-none padding-none">
+      <div class="event-time-small padding-none"><i class="far fa-clock"></i></div>
+      <div class="event-time-small height-fit">
+        <%=@event.begin_date.day%> <%= $monthnames[@event.begin_date.month]%> <%= @event.begin_date.hour%>:<%=@event.begin_date.min%>
+      </div>
+    </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= student.email %>
-</p>
+    <div class="row margin-none padding-B-1rem padding-none ">
+      <div class="event-time-small padding-none"><i class="far fa-map"></i></div>
+      <div class="event-place-small height-fit width-fit-time margin-T-01rem">
+      <%=@event.place %>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Group:</strong>
-  <%= student.group %>
-</p>
+  <div class="row padding-none margin-B-1rem">
+    <div class="col-6 row margin-none event-show padding-R-1rem">
 
-<p>
-  <strong>Faculty:</strong>
-  <%= student.faculty %>
-</p>
+      <div class="row data-bilet align-content-center margin-none margin-B-05rem">
 
-<p>
-  <strong>Bilet:</strong>
-  <%= student.bilet %>
-</p>
+        <div class="event-advice-big">
+          <%= student.second_name %>
+        </div>
 
-<p>
-  <strong>Phone:</strong>
-  <%= student.phone %>
-</p>
 
-<p>
-  <strong>Vk:</strong>
-  <%= student.vk_id %>
-</p>
+      </div>
 
-<p>
-  <strong>Visit:</strong>
-  <%= student.visit %>
-</p>
+      <div class="row data-bilet align-content-center margin-none margin-B-05rem">
 
-<p>
-  <strong>qrcode:</strong>
-  <%= get_qrcode(student.qrcode).html_safe %>
-</p>
+        <div class="event-advice-big">
+          <%= student.first_name %>
+        </div>
+
+
+      </div>
+
+      <div class="row data-bilet align-content-center margin-none margin-B-05rem">
+
+        <div class="event-advice-big">
+          <%= student.bilet %>
+        </div>
+
+
+      </div>
+
+
+
+
+    </div>
+    <div class="col-6 row margin-none event-show padding-R-1rem qr-code">
+      <%= get_qrcode(student.qrcode).html_safe %>
+
+
+
+    </div>
+
+  </div>
+  <div class="row advice align-content-center margin-none margin-B-1rem">
+
+    <div class="event-advice-big">
+     <%=@event.advice %>
+    </div>
+
+
+  </div>
+
+
 
 </div>

@@ -22,4 +22,4 @@ test:
 
 production:
   <<: *default
-  database: profkom_event_development
+  database: profkom_event_production

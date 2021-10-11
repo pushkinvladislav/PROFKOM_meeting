@@ -1,13 +1,21 @@
-<%= link_to 'Download Report', student_path(format: 'pdf') %>
-<p>
-  <strong>Second name:</strong>
-  <%= @student.second_name %>
-</p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @student.first_name %>
-</p>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 bg-white border-bottom sticky-top">
+  <h1 class="h2"><%= @student.second_name + " " + @student.first_name%> </h1>
+  <div>
+    <%= link_to student_path(format: 'pdf'), class: 'btn' do%>
+      <i class="fas fa-save"></i> Скачать
+    <% end %>
+
+    <%= link_to  new_event_path, class: 'btn margin-right-1rem' do%>
+      <i class="fas fa-plus-circle"></i> Новое
+    <% end %>
+
+  </div>
+
+</div>
+
+<br>
+
 
 <p>
   <strong>Email:</strong>
@@ -15,33 +23,37 @@
 </p>
 
 <p>
-  <strong>Group:</strong>
+  <strong>Группа:</strong>
   <%= @student.group %>
 </p>
 
 <p>
-  <strong>Faculty:</strong>
+  <strong>Факультет:</strong>
   <%= @student.faculty %>
 </p>
 
 <p>
-  <strong>Bilet:</strong>
+  <strong>Билет:</strong>
   <%= @student.bilet %>
 </p>
 
 <p>
-  <strong>Phone:</strong>
+  <strong>Телефон:</strong>
   <%= @student.phone %>
 </p>
 
 <p>
-  <strong>Vk:</strong>
+  <strong>ВКонтакте:</strong>
   <%= @student.vk_id %>
 </p>
 
 <p>
-  <strong>Visit:</strong>
-  <%= @student.visit %>
+  <strong>Посещение:</strong>
+  <% if @student.visit? %>
+    Да
+  <% else %>
+    Нет
+  <% end %>
 </p>
 
 <p>

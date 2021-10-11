@@ -1,80 +1,59 @@
 <main>
 
-  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div id="myCarousel" class="carousel slide carousel-fade" data-bs-touch="true" >
+    <div class="carousel-inner carousel-events">
+      <div class="carousel-item active" style="background: url('<%= asset_path('bann1.jpg') %>') no-repeat center center; ">
+      </div>
+      <div class="carousel-item" style="background: url('<%= asset_path('banner_1.jpg') %>') no-repeat center center; ">
+      </div>
+      <div class="carousel-item" style="background: url('<%= asset_path('banner_2.jpg') %>') no-repeat center center; ">
+      </div>
+    </div>
     <ol class="carousel-indicators">
       <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
       <li data-bs-target="#myCarousel" data-bs-slide-to="1" class=""></li>
       <li data-bs-target="#myCarousel" data-bs-slide-to="2" class=""></li>
     </ol>
+  </div>
+
+
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="false" data-bs-touch="true">
+
     <div class="carousel-inner">
-      <div class="carousel-item active" style="background: url('<%= asset_path('banner_3.jpg') %>') no-repeat center center; ">
+      <div class="carousel-indicators event-select">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="event-selector active" aria-current="true" aria-label="Slide 1">Открыта регистрация ›
+        </button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="event-selector" aria-label="Slide 2">Планируются
+          ›
+        </button>
+      </div>
+      <div class="carousel-item active event-select">
         <div class="container">
-          <div class="carousel-caption text-start">
-            <h1>Картинг</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-              metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+          <div class="row">
+
+            <%= render "events/events" %>
           </div>
         </div>
       </div>
-      <div class="carousel-item" style="background: url('<%= asset_path('banner_1.jpg') %>') no-repeat center center; ">
+      <div class="carousel-item event-select">
         <div class="container">
-          <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-              metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
 
+          <div class="row">
+
+            <%= render "events/preview_events" %>
           </div>
         </div>
       </div>
-      <div class="carousel-item" style="background: url('<%= asset_path('banner_2.jpg') %>') no-repeat center center; ">
-        <div class="container">
-          <div class="carousel-caption text-end">
-            <h1>One more for good measure.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-              metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
 
-          </div>
-        </div>
-      </div>
+
     </div>
-    <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </a>
-  </div>
-
-
-  <!-- Marketing messaging and featurettes
-  ================================================== -->
-  <!-- Wrap the rest of the page in another container to center all the content. -->
-
-
-  <br>
-
-
-  <div class="container">
-    <div class="row row-cols-1">
-      <div class="col text-center">
-        <h1>
-          Текущие мероприятия
-        </h1>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-
-      <%= render "events/events" %>
-    </div>
-  </div>
 
   </div>
 
 
-  <hr class="featurette-divider">
+  </div>
+
 
 </main>
-
-<%= render "layouts/footer" %>

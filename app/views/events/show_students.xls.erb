@@ -1,6 +1,7 @@
 <h1>Список участников "<%= @event.name %>"</h1>
 <table class='table table-striped text-center'>
   <tr>
+    <th>Команда</th>
     <th>Фамилия</th>
     <th>Имя</th>
     <th>Email</th>
@@ -12,8 +13,13 @@
     <th>Посещение</th>
     <th colspan="3"></th>
   </tr>
-  <% @students.each do |student| %>
+  <% @students.sort_by { |student | student.team_id }.each do |student| %>
     <tr>
+      <%if student.team_id %>
+        <td><%= Team.find_by(id: student.team_id).name%></td>
+      <%else%>
+        <td></td>
+      <%end %>
       <td><%= student.second_name %></td>
       <td><%= student.first_name %></td>
       <td><%= student.email %></td>

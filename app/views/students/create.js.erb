@@ -1,7 +1,7 @@
 $("#new_student").bind('ajax:success', function () {
     $("#require").hide(500); // скрывает форму
     console.log("good1");
-    $('#show_bilet').html("<%= j render(@student) %>");
+    $('#show_bilet').html("<%= j render(@student , :event => @event) %>");
     $("#response").show(500); // выводит скрытое сообщение
     console.log("good2");
 });

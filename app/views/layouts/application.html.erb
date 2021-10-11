@@ -1,48 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ProfkomMeeting</title>
+  <title>Мероприятия Профсоюза студентов</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600;800&family=Montserrat:wght@400;500;600&display=swap');
+  </style>
+
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
+
+  <script>var popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
+      trigger: 'focus'
+  })</script>
+  <script src="https://kit.fontawesome.com/a9384d756f.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+
+
+
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 
 <body>
-<% if @show_sidebar.nil? %>
-  <header>
-    <%= render "layouts/navigation/student" %>
-  </header>
-  <%= yield %>
-<% else %>
-  <%= render "layouts/navigation/admin" %>
 
-  <div class="container-fluid pdf_exclude">
-    <div class="row pdf_exclude">
-      <%= render "layouts/navigation/sidebar" %>
-      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <div class="chartjs-size-monitor">
-          <div class="chartjs-size-monitor-expand">
-            <div class=""></div>
-          </div>
-          <div class="chartjs-size-monitor-shrink">
-            <div class=""></div>
-          </div>
+
+<div id="main" class="blur height-all-page">
+<div  class="height-all-page <% if @show_sidebar.nil? %> main <% end %>">
+  <% if @show_sidebar.nil? %>
+    <header class="bg-white">
+      <%= render "layouts/navigation/student" %>
+    </header>
+    <%= yield %>
+  <% else %>
+    <%= render "layouts/navigation/admin" %>
+
+
+    <div class="container-fluid height-all-page">
+      <div class="row height-all-page">
+        <div class="col-xl-2 padding-1rem bg-light-color height-all-page">
+          <%= render "layouts/navigation/sidebar" %>
         </div>
-        <%= yield %>
-      </main>
+        <div class="col-xl-10 padding-1rem">
+          <%= yield %>
+        </div>
+
+      </div>
+
+
     </div>
-  </div>
+  <% end %>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+</div>
+<% if @show_sidebar.nil? %>
+  <%= render "layouts/footer" %>
 <% end %>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+
+  </div>
+</div>
+
+<div class="modal fade" id="studentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" id="studentModalDialog">
+
+  </div>
+</div>
+<script>
+
+    let myModalEl1 = document.getElementById('exampleModal')
+    myModalEl1.addEventListener('show.bs.modal', function (event) {
+        document.getElementById('main').classList.remove("no_blur");
+        document.getElementById('main').classList.add("add_blur");
+    })
+    myModalEl1.addEventListener('hide.bs.modal', function (event) {
+        document.getElementById('main').classList.remove("add_blur");
+        document.getElementById('main').classList.add("no_blur");
+    })
+
+    let myModalEl2 = document.getElementById('studentModal')
+    myModalEl2.addEventListener('show.bs.modal', function (event) {
+        document.getElementById('main').classList.remove("no_blur");
+        document.getElementById('main').classList.add("add_blur");
+    })
+    myModalEl2.addEventListener('hide.bs.modal', function (event) {
+        document.getElementById('main').classList.remove("add_blur");
+        document.getElementById('main').classList.add("no_blur");
+    })
 
 
 
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</script>
 
 </body>
+
 </html>

@@ -5,7 +5,6 @@ class CreateEvents < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :information
       t.string :photo
-      t.boolean :activation
       t.timestamps
     end
   end

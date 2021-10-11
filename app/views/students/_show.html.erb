@@ -1,0 +1,64 @@
+<div class="modal-content">
+  <div id="require">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel"><%= @student.second_name + " " + @student.first_name %></h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+
+    <div class="modal-body">
+
+      <p>
+        <strong>Email:</strong>
+        <%= @student.email %>
+      </p>
+
+      <p>
+        <strong>Группа:</strong>
+        <%= @student.group %>
+      </p>
+
+      <p>
+        <strong>Факультет:</strong>
+        <%= @student.faculty %>
+      </p>
+
+      <p>
+        <strong>Билет:</strong>
+        <%= @student.bilet %>
+      </p>
+
+      <p>
+        <strong>Телефон:</strong>
+        <%= @student.phone %>
+      </p>
+
+      <p>
+        <strong>ВКонтакте:</strong>
+        <%= @student.vk_id %>
+      </p>
+
+      <p>
+        <strong>Посещение:</strong>
+        <% if @student.visit? %>
+          Да
+        <% else %>
+          Нет
+        <% end %>
+      </p>
+
+      <p>
+        <strong>qrcode:</strong>
+        <%= get_qrcode(@student.qrcode).html_safe %>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <%= link_to student_path(format: 'pdf'), class: 'btn' do %>
+        <i class="fas fa-save"></i> Скачать
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+

@@ -1,11 +1,14 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: %i[show edit update destroy activation show_students]
+  before_action :set_event, only: %i[show edit update destroy activation show_students get_preview]
   before_action :authenticate_account!, only: %i[new edit create destroy show_students]
   before_action :set_sidebar, except: %i[show]
 
   # GET /events or /events.json
   def index
     @events = Event.all
+    @active_events = Event.active
+    @preview_events = Event.preview
+    @events_archive = Event.archive
   end
 
   def show_students
@@ -63,8 +66,22 @@ class EventsController < ApplicationController
   def activation
     if @event.activation
       @event.update(activation: false)
+      @event.update(preview: true)
     else
       @event.update(activation: true)
+      @event.update(preview: false)
+    end
+    respond_to do |format|
+      format.js { render nothing: true }
+    end
+  end
+
+  def get_preview
+    if @event.preview
+      @event.update(activation: false)
+      @event.update(preview: false)
+    else
+      @event.update(preview: true)
     end
     respond_to do |format|
       format.js { render nothing: true }
@@ -93,6 +110,6 @@ class EventsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def event_params
-    params.require(:event).permit(:name, :information, :photo, :photo_cache)
+    params.require(:event).permit(:name, :information, :place, :advice, :begin_date, :end_date, :photo, :photo_cache, :solo)
   end
 end
